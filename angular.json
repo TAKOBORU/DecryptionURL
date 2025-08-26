@@ -52,7 +52,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/DecryptionURL/"
             },
             "development": {
               "buildOptimizer": false,
