@@ -1,0 +1,43 @@
+<div class="toolbar" role="banner">
+  <i class="bi bi-code-slash mx-3"></i>
+  <span>AES Decryption URL</span>
+  <div class="spacer"></div>
+
+</div>
+
+<div class="content" role="main">
+  <div class="terminal">
+    <div class="p-2 mb-3">
+      <div class="row m-0">
+        <div class="col-auto align-content-end px-0">
+          <label for="exampleFormControlTextarea1" class="form-label text-white">Passphrase></label>
+        </div>
+        <div class="col px-0">
+          <input type="text" class="form-control input-terminal" name="passphrase" [(ngModel)]="passphrase" autocomplete="off">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-4"></div>
+  <div class="col-12">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Input</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="9" [(ngModel)]="ciphertext"></textarea>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Output</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="9" [(ngModel)]="decodetext"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="text-center"><button type="button" class="btn btn-primary" (click)="convert()"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+          height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
+        </svg> Convert</button></div>
+  </div>
+</div>
