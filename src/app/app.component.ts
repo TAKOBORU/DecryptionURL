@@ -6,10 +6,10 @@ import * as CryptoJS from 'crypto-js';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DecryptionURL';
   passphrase = '';
-  ciphertext = '';
-  decodetext = '';
+  inputText = '';
+  outputText = '';
+  mode = 'Encryption';
   constructor() {
     const params = new URLSearchParams(window.location.search);
     const passphraseParam = params.get('passphrase');
@@ -25,11 +25,19 @@ export class AppComponent {
       });
       return alert(`passphrase can't empty`);
     }
-    const decrypted = CryptoJS.AES.decrypt(decodeURIComponent(this.ciphertext), this.passphrase);
-    this.decodetext = decrypted.toString(CryptoJS.enc.Utf8);
-    if (this.decodetext == '') {
-      alert('Error: bad decrypt')
+    switch (this.mode) {
+      case 'Encryption': {
+        const encrypted = CryptoJS.AES.encrypt(this.inputText, this.passphrase);
+        this.outputText = encodeURIComponent(encrypted.toString());
+      }; break
+      case 'Decryption': {
+        const decrypted = CryptoJS.AES.decrypt(decodeURIComponent(this.inputText), this.passphrase);
+        this.outputText = decrypted.toString(CryptoJS.enc.Utf8);
+        if (this.outputText == '') {
+          alert('Error: bad decrypt')
+        }
+      }; break
     }
-
   }
+
 }

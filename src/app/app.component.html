@@ -1,6 +1,6 @@
 <div class="toolbar" role="banner">
   <i class="bi bi-code-slash mx-3"></i>
-  <span>AES Decryption URL</span>
+  <span>AES Encryption/Decryption URL</span>
   <div class="spacer"></div>
 
 </div>
@@ -20,17 +20,28 @@
   </div>
   <div class="my-4"></div>
   <div class="col-12">
+    <div class="row text-center mb-4">
+      <div class="col">
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="Encryption" [(ngModel)]="mode">
+          <label class="btn btn-outline-primary" for="btnradio1">Encryption</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="Decryption" [(ngModel)]="mode">
+          <label class="btn btn-outline-primary" for="btnradio2">Decryption</label>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col">
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Input</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="9" [(ngModel)]="ciphertext"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="9" [(ngModel)]="inputText"></textarea>
         </div>
       </div>
       <div class="col">
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Output</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="9" [(ngModel)]="decodetext"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="9" [(ngModel)]="outputText"></textarea>
         </div>
       </div>
     </div>
